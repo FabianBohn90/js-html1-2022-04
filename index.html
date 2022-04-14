@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Lager</title>
 </head>
 
 <!-- ToDo: Schreibe innerhalb der html-Tags dieses Dokumentes die Lösungen für Aufgabe1, Aufgabe2 und Aufgabe3 -->
@@ -11,34 +12,35 @@
 <body>
 <header>
     <h1>Lager</h1>
-    <nav><input type="text" placeholder="Artikel Hinzufügen"> <button>+</button></nav><hr/>
+    <nav><input type="text" placeholder="Artikel Hinzufügen">
+    <button class="material-icons" style="vertical-align: bottom">add_circle</button></nav><hr/>
 </header>
 <main>
     <section>
-        <h2>Einkaufen</h2>
+        <h2>Einkaufen<i class="material-icons"> expand_less </i></h2>
 
-        <dl><dt>Obst & Gemüse</dt>
+        <dl><dt>Obst & Gemüse<i class="material-icons">expand_less</i></dt>
                 <dd><label><input type="checkbox">Broccoli</label></dd>
 
-        <dt>Getreideprodukte</dt>
+        <dt>Getreideprodukte<i class="material-icons">expand_less</i></dt>
                 <dd><label><input type="checkbox">Reis</label></dd>
 
-        <dt>Milchprodukte</dt>
+        <dt>Milchprodukte<i class="material-icons">expand_less</i></dt>
                 <dd><label><input type="checkbox">Streukäse</label></dd>
         </dl><hr/>
     </section>
 
     <section>
-        <h2>Erledigt</h2>
+        <h2>Erledigt<i class="material-icons">expand_less</i></h2>
 
-        <dl><dt>Hülsenfrüchte</dt>
-                <dd><label><input type="checkbox">Tofu</label></dd></dl><hr/>
+        <dl><dt>Hülsenfrüchte<i class="material-icons">expand_less</i></dt>
+                <dd><label><input type="checkbox"><s>Tofu</s></label></dd></dl><hr/>
     </section>
 
 </main>
 <footer>
     <nav>
-        <button><div>Gruppe</div></button>
+        <button><span class="material-<icons" style=""> Gruppe</span></button>
         <button><div>Sortieren</div></button>
         <button><div>Einstellungen</div></button>
     </nav>
