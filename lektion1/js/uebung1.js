@@ -40,7 +40,7 @@ function aufgabe5() {
 
   //ToDo: füge ab hier Deinen Code ein
 let name, alter, groesseInMeter, amLeben
-  name = "Elon Musk"
+  name = "Elon Musk";
   alter = 50
   groesseInMeter = 1.88
   amLeben = true
