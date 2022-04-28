@@ -9,7 +9,12 @@ function aufgabe1() {
   console.debug("Aufgabe 1 ==========================");
 
   //ToDo: füge ab hier Deinen Code ein
-
+  let pizza = {
+    art: "Mozzarella",
+    belag: "Mozzarella " + "Tomaten " + "Basilikum",
+    skala: 8,
+    gerneIsst: true
+  }
   console.debug(pizza)
 }
 
@@ -26,9 +31,9 @@ function aufgabe2() {
   }
 
   //ToDo: füge ab hier in den debugs Deinen Code ein
-  console.debug()
-  console.debug()
-  console.debug()
+  console.debug(Object.keys(ghibli))
+  console.debug(Object.values(ghibli))
+  console.debug(Object.entries(ghibli))
 }
 
 /**
@@ -38,7 +43,13 @@ function aufgabe3() {
   console.debug("Aufgabe 3 ==========================");
 
   //ToDo: füge ab hier Deinen Code ein
-
+  let kuenstler = {
+    vorname: "jim",
+    nachname: "Carrey",
+    alter: 60,
+    beruf: "Schauspieler",
+    herkunft: "Kanada"
+  }
   for (let key of Object.keys(kuenstler)) {
     console.debug(key + ": " + kuenstler[key])
   }
@@ -52,4 +63,5 @@ function main() {
   aufgabe2()
   aufgabe3()
 }
+
 main()
