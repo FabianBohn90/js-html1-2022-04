@@ -26,9 +26,8 @@ function artikel_Hinzufuegen(artikelName) {
     artikelName = "Quinoa"
 
     if (artikelName !== "") {
-        console.debug("[",gruppenName,"]",
-           artikelName ,
-        "hinzugefügt")
+        console.debug
+        ("[",gruppenName,"]", artikelName , "hinzugefügt")
     }
 }
 
@@ -41,8 +40,14 @@ function gruppe_Hinzufuegen() {
     let gleicheGruppe
     let neueGruppe = "Getränke"
     if (gleicheGruppe === undefined) {
-        console.debug("[App]", "Gruppe", neueGruppe, "hinzugefügt")
+        console.debug
+        ("[App]", "Gruppe", neueGruppe, "hinzugefügt")
     }
+    else {
+        console.debug
+        ("[App] Gruppe", neueGruppe, "existiert schon!")
+        }
+
 }
 
 /**
@@ -52,7 +57,7 @@ function einkaufsliste_Vorhanden() {
     // ToDo: füge ab hier deinen Code ein
     let milchProdukte = ["Milch", "Johgurt", "Sahne"]
     let artikel = "Eisbergsalat"
-    switch (artikel) {
+    switch (milchProdukte) {
         case "Eisbergsalat":
     }
 }
