@@ -11,7 +11,9 @@ function aufgabe1() {
   let ampel = "gruen";
 
   //ToDo: füge ab hier deinen Code ein
-
+  if (ampel == "gruen") {
+    console.debug("Du darfst fahren!")
+  }
 }
 
 /**
@@ -23,6 +25,9 @@ function aufgabe2() {
   let ampel = "rot";
 
   //ToDo: füge ab hier deinen Code ein
+  if (ampel != "gruen") {
+    console.debug("Du musst halten!")
+  }
 }
 
 /**
@@ -34,7 +39,13 @@ function aufgabe3() {
   let ampel = "gruen";
 
   //ToDo: füge ab hier Deinen Code ein
+  if (ampel == "gruen") {
+    console.debug("Du darfst fahren!")
+  } else {
+    console.debug("Du musst halten!")
+  }
 }
+
 
 /**
  * 4) Bastel deinen Switch Wochenkalender!
@@ -43,8 +54,30 @@ function aufgabe4() {
   console.debug("Aufgabe 4 ==========================");
 
   let tag = 5;
-
+  let allgemein = "Die Woche hat genau 7 Tage"
   //ToDo: füge ab hier Deinen Code ein
+  switch (tag) {
+    case 1:
+      console.debug("Heute ist Montag!", allgemein)
+      break
+    case 2:
+      console.debug("Heute ist Dienstag!", allgemein)
+      break
+    case 3:
+      console.debug("Heute ist Mittwoch!", allgemein)
+      break
+    case 4:
+      console.debug("Heute ist Donnerstag!", allgemein)
+      break
+    case 5:
+      console.debug("Heute ist Freitag!", allgemein)
+      break
+    case 6:
+      console.debug("Heute ist Samstag!", allgemein)
+      break
+    case 7:
+      console.debug("Heute ist Sonntag!", allgemein)
+  }
 }
 
 /**
@@ -56,4 +89,5 @@ function main() {
   aufgabe3();
   aufgabe4();
 }
+
 main();

@@ -5,19 +5,31 @@
 
 /**
  * 1) 1) Erstelle eine if-Anweisung, die abfragt, ob ein bestimmter Artikel bereits gekauft wurde */
-function artikel_Gekauft() {
+function artikel_Gekauft(artikelGekauft) {
     //ToDo: füge ab hier deinen Code ein
-
+    let artikelName = "Streukäse"
+    artikelGekauft = true
+    if (artikelGekauft === true)
+    {
+        console.debug ("[Artikel]",artikelName, "wurde gekauft")
+    }
 }
 
 
 /**
- * 2) Erstelle eine if-Abfrage, die in der Kosole ausgibt, dass ein Artikel hinzugefügt wurde,
+ * 2) Erstelle eine if-Abfrage, die in der Konsole ausgibt, dass ein Artikel hinzugefügt wurde,
  * falls der `artikelName` NICHT leer ist.
  */
-function artikel_Hinzufuegen() {
+function artikel_Hinzufuegen(artikelName) {
     //ToDo: füge ab hier deinen Code ein
+    let gruppenName = "Getreide"
+    artikelName = "Quinoa"
 
+    if (artikelName !== "") {
+        console.debug("[",gruppenName,"]",
+           artikelName ,
+        "hinzugefügt")
+    }
 }
 
 /**
@@ -26,7 +38,11 @@ function artikel_Hinzufuegen() {
  */
 function gruppe_Hinzufuegen() {
     // ToDo: füge ab hier deinen Code ein
-
+    let gleicheGruppe
+    let neueGruppe = "Getränke"
+    if (gleicheGruppe === undefined) {
+        console.debug("[App]", "Gruppe", neueGruppe, "hinzugefügt")
+    }
 }
 
 /**
@@ -34,7 +50,11 @@ function gruppe_Hinzufuegen() {
  */
 function einkaufsliste_Vorhanden() {
     // ToDo: füge ab hier deinen Code ein
-
+    let milchProdukte = ["Milch", "Johgurt", "Sahne"]
+    let artikel = "Eisbergsalat"
+    switch (artikel) {
+        case "Eisbergsalat":
+    }
 }
 
 /**
