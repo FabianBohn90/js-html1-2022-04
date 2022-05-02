@@ -25,14 +25,14 @@ function artikel_Hinzufuegen(artikelName) {
     let gruppenName = "Getreide"
     artikelName = "Quinoa"
 
-    if (artikelName !== "") {
+    if (!artikelName !== undefined) {
         console.debug
-        ("[",gruppenName,"]", artikelName , "hinzugefügt")
+        (gruppenName, artikelName , "hinzugefügt")
     }
 }
 
 /**
- * 3) Erstelle eine if-else-Anweisung, die überprüft ob die Gruppe `neueGruppe` bereits im leeren Array `gleicheGruppe`
+ * 3) Erstelle eine if-else-Anweisung, die überprüft, ob die Gruppe `neueGruppe` bereits im leeren Array `gleicheGruppe`
  * existiert und dementsprechend passende Sätze auf der Konsole ausgibt
  */
 function gruppe_Hinzufuegen() {
@@ -44,22 +44,35 @@ function gruppe_Hinzufuegen() {
         ("[App]", "Gruppe", neueGruppe, "hinzugefügt")
     }
     else {
-        console.debug
+        console.warn
         ("[App] Gruppe", neueGruppe, "existiert schon!")
         }
 
 }
 
 /**
- * 4) Überprüfe mit Hilfe einer switch-case-Anweisung, ob ein bestimmter Artikel in dem Array `einkaufsliste` vorkommt
+ * 4) Überprüfe mithilfe einer switch-case-Anweisung, ob ein bestimmter Artikel in dem Array `einkaufsliste` vorkommt
  */
 function einkaufsliste_Vorhanden() {
     // ToDo: füge ab hier deinen Code ein
-    let milchProdukte = ["Milch", "Johgurt", "Sahne"]
+    let milchProdukte = ["Milch", "Jogurt", "Sahne"]
     let artikel = "Eisbergsalat"
-    switch (milchProdukte) {
-        case "Eisbergsalat":
-    }
+    switch (artikel) {
+        case 1:
+            "Milch";
+            console.debug("Milch", "ist ein Milchprodukt")
+            break
+        case 2:
+            "Jogurt";
+            console.debug("Jogurt", "ist ein Milchprodukt")
+            break
+        case 3:
+            "Sahne";
+            console.debug("Sahne", "ist ein Milchprodukt")
+            break
+        default:
+            console.debug("Artikel", artikel, "ist KEIN Milchprodukt")
+        }
 }
 
 /**
@@ -67,6 +80,17 @@ function einkaufsliste_Vorhanden() {
  */
 function zusatz_indexOf() {
     // ToDo: füge ab hier deinen Code ein
+    let einkaufliste = ["Tofu", "Milch", "Honig"]
+    let tomatenIndex
+
+    tomatenIndex = einkaufliste.indexOf("Tomate")
+    if (tomatenIndex === -1) {
+        console.debug("Auf der Einkaufsliste stehen KEINE Tomaten")
+
+    }
+    else {
+        console.debug("Auf der Einkaufsliste stehen Tomaten")
+    }
 
 }
 
