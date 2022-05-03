@@ -1,5 +1,5 @@
 /**
- * Uebung 5: Schleifen
+ * Übung 5: Schleifen
  */
 
 /**
@@ -21,7 +21,7 @@ function aufgabe2() {
   console.debug("Aufgabe 2 ==========================");
 
   for(let i=1; i<6; i++) {
-    if(i==3) {
+    if(i===3) {
       //ToDo: füge ab hier Deinen Code ein
       break
     }
@@ -51,8 +51,8 @@ function aufgabe4() {
   console.debug("Aufgabe 4 ==========================")
 
   //ToDo: füge ab hier Deinen Code ein
-  for (i=1;i<=3;i++) {
-    for (j=1;j<=2;j++) {
+  for (let i=1;i<=3;i++) {
+    for (let j=1;j<=2;j++) {
         console.debug("Zweite Schleife j:", j)
       }
   console.debug("Erste Schleife i:", i)
