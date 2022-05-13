@@ -1,9 +1,10 @@
+
 class Artikel {
-  counter = 1
+  static counter = 1
   id
   position
   name
-  gekauft
+  gekauft = true
 
   constructor(name, position) {
     this.name = name

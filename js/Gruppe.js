@@ -1,13 +1,21 @@
-import Artikel from './Artikel'
-import App from './Shopping'
+import {Artikel} from "./Artikel.js";
+import {Shopping} from "./Shopping.js";
 
 class Gruppe {
 
   static counter = 1
-  artikelListe
+  artikelListe = []
   id
 
-  artikelAuflisten (gekauft)
+  artikelAuflisten (gekauft = true) {
+    for (let artikel of this.artikelListe) {
+      if (artikel.gekauft) {
+        console.debug(`${artikel.name}`)
+
+      }
+    }
+
+  }
 
   constructor(name, index) {
     this.name = name
