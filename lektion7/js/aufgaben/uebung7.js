@@ -1,5 +1,5 @@
 /**
- * Uebung 7: Klassen
+ * Übung 7: Klassen
  */
 
 /**
@@ -9,7 +9,7 @@ function aufgabe1() {
   console.debug("Aufgabe 1 ==========================")
 
   class Apfel {
-    constructor (farbe) {
+    constructor(farbe) {
       this.farbe = farbe
     }
 
@@ -27,7 +27,7 @@ function aufgabe2() {
   console.debug("Aufgabe 2 ==========================")
 
   class Auto {
-    constructor (farbe) {
+    constructor(farbe) {
       this.farbe = farbe
     }
 
@@ -39,6 +39,7 @@ function aufgabe2() {
 
   let bmw = new Auto("rot")
 
+  console.debug(bmw.farbe)
   bmw.hupen()
 }
 
@@ -49,7 +50,7 @@ function aufgabe3() {
   console.debug("Aufgabe 3 ==========================");
 
   class Pkw {
-    constructor (farbe) {
+    constructor(farbe) {
       this.farbe = farbe
     }
 
@@ -85,6 +86,7 @@ function aufgabe4() {
   let harley = new Motorrad(1980)
 
   console.debug(harley.baujahr)
+  harley.hupen()
 }
 
 /**
@@ -98,11 +100,13 @@ function aufgabe5() {
     constructor(farbe) {
       this.farbe = farbe
     }
+
     hupen() {
       console.debug("honk honk")
     }
   }
-let tesla = new Elektroauto("grau")
+
+  let tesla = new Elektroauto("grau")
   console.debug(tesla.farbe)
   tesla.hupen()
 }
@@ -117,4 +121,5 @@ function main() {
   aufgabe4()
   aufgabe5()
 }
+
 main()
