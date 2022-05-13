@@ -1,0 +1,5 @@
+class Shopping {
+
+}
+
+export {Shopping}
