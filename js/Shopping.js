@@ -1,7 +1,7 @@
 
 class Shopping {
-  gruppenListe
-  aktiveGruppe
+  gruppenListe = []
+  aktiveGruppe = null
   setup
 
   gruppeFinden(gruppenName) {
