@@ -11,21 +11,12 @@ class ShoppingList extends React.Component {
       //füge hier deinen HTML-Code ein
       <div id="container">
         {/* ToDo: füge hier drunter Deinen HTML-Code ein */}
-        <head>
-          <meta charSet="UTF-8"/>
-          <title>Title</title>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          />
-        </head>
 
-        <body>
         <header>
           <h1>Lager</h1>
           <nav>
             <input type="text" placeholder="Artikel Hinzufügen" />
-            <button className="material-icons" style="vertical-align: bottom">
+            <button className="material-icons">
               add_circle
             </button>
           </nav>
@@ -35,27 +26,22 @@ class ShoppingList extends React.Component {
         <main>
           <section>
             <h2>
-              Einkaufen<i style="float: right" className="material-icons">
-              expand_less
+              Einkaufen<i className="material-icons"> expand_less
             </i>
             </h2>
 
             <dl>
               <dt>
-                <p style="background-color: lightblue">
                   Obst & Gemüse
-                  <i style="float: right" className="material-icons">expand_less</i>
-                </p>
+                  <i className="material-icons">expand_less</i>
               </dt>
               <dd>
                 <label><input type="checkbox" />Broccoli</label>
               </dd>
 
               <dt>
-                <p style="background-color: lightblue">
                   Getreideprodukte
-                  <i style="float: right" className="material-icons">expand_less</i>
-                </p>
+                  <i className="material-icons">expand_less</i>
               </dt>
 
               <dd>
@@ -63,10 +49,8 @@ class ShoppingList extends React.Component {
               </dd>
 
               <dt>
-                <p style="background-color: lightblue">
                   Milchprodukte
-                  <i style="float: right" className="material-icons">expand_less</i>
-                </p>
+                  <i className="material-icons">expand_less</i>
               </dt>
 
               <dd>
@@ -78,16 +62,15 @@ class ShoppingList extends React.Component {
 
           <section>
             <h2>
-              Erledigt<i style="float: right" className="material-icons">expand_less</i>
+              Erledigt<i className="material-icons">expand_less</i>
             </h2>
 
             <dl>
               <dt>
-                <p style="background-color: lightblue">
-                  Hülsenfrüchte<i style="float: right" className="material-icons"
+
+                  Hülsenfrüchte<i  className="material-icons"
                 >expand_less</i
                 >
-                </p>
               </dt>
 
               <dd>
@@ -105,7 +88,6 @@ class ShoppingList extends React.Component {
             <button><span className="material-icons">settings</span>Einstellungen</button>
           </nav>
         </footer>
-      </body>
 
     <GruppenTag/>
       </div>
