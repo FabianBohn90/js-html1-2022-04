@@ -16,19 +16,6 @@ class GruppenTag extends React.Component {
         </dt>
 
         <ArtikelTag/>
-
-        <dt>
-          Getreideprodukte
-          <i className="material-icons">expand_less</i>
-        </dt>
-
-        <dt>
-          Milchprodukte
-          <i className="material-icons">expand_less</i>
-        </dt>
-
-
-        <ArtikelTag/>
         <ArtikelTag/>
         <ArtikelTag/>
       </React.Fragment>
