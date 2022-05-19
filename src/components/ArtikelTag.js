@@ -12,7 +12,7 @@ class ArtikelTag extends React.Component {
 
 
         <dd>
-          <label><input type="checkbox" />Broccoli</label>
+          <label><input type="checkbox" />Brokkoli</label>
         </dd>
 
 
