@@ -31,31 +31,7 @@ class ShoppingList extends React.Component {
             </h2>
 
             <dl>
-              <dt>
-                  Obst & Gemüse
-                  <i className="material-icons">expand_less</i>
-              </dt>
-              <dd>
-                <label><input type="checkbox" />Broccoli</label>
-              </dd>
-
-              <dt>
-                  Getreideprodukte
-                  <i className="material-icons">expand_less</i>
-              </dt>
-
-              <dd>
-                <label><input type="checkbox" />Reis</label>
-              </dd>
-
-              <dt>
-                  Milchprodukte
-                  <i className="material-icons">expand_less</i>
-              </dt>
-
-              <dd>
-                <label><input type="checkbox" />Streukäse</label>
-              </dd>
+              <GruppenTag/>
             </dl>
             <hr />
           </section>
@@ -89,7 +65,7 @@ class ShoppingList extends React.Component {
           </nav>
         </footer>
 
-    <GruppenTag/>
+    {/*<GruppenTag/>*/}
       </div>
     )
   }

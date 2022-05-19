@@ -9,7 +9,15 @@ class ArtikelTag extends React.Component {
     return (
       <React.Fragment>
         {/* ToDo: füge hier drunter Deinen HTML-Code ein */}
-        Füge hier Deinen ArtikelTag-Code<br/>
+
+
+        <dd>
+          <label><input type="checkbox" />Broccoli</label>
+        </dd>
+
+
+
+
       </React.Fragment>
     )
   }
