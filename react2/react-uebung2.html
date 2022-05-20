@@ -37,7 +37,7 @@
 <script type="text/babel">
 
   //ToDo: Schreibe hier deine Klasse Tag!
-class Tag extends React.Component {
+  class Tag extends React.Component {
   render() {
     return (
       <h1>Heute ist ein schöner Tag!</h1>
@@ -61,10 +61,14 @@ class Tag extends React.Component {
 
   //ToDo: Schreibe hier deine Funktion mit props! Vergesse nicht, deinen Namen unten zu schreiben!
 
-function Hey (props) {
+  function Hey(props) {
+  return (
+    <div>
+    hey,  {props.name}
+  </div> )
+}
 
-
-}  const element3 = <Hey name="Fabian" />;
+  const element3 = <Hey name="Fabian" />;
   ReactDOM.render(
     element3,
     document.getElementById(`root3`)
