@@ -8,22 +8,26 @@ class GruppenTag extends React.Component {
 
   render() {
     const gruppe = this.props.gruppe
-    let artikelArray = []
-    for (const artikel of gruppe.artikelListe ) {
-      artikelArray.push(<ArtikelTag artikel = {artikel} key={artikel.id}/>)
+
+    let gruppenHeader = ""
+    if (this.props.gekauft == false) {
+      gruppenHeader = (<dt>
+        <span>{gruppe.name}</span>
+        <i className="material-icons">expand_less</i>
+      </dt>)
     }
 
-
+    let artikelArray = []
+    for (const film of gruppe.artikelListe) {
+      if (film.gekauft == this.props.gekauft) {
+        artikelArray.push(<ArtikelTag artikel={film} key={film.id}/>)
+      }
+    }
     return (
       <React.Fragment>
         {/* ToDo: füge hier drunter Deinen HTML-Code ein */}
-        <dt>
-          Obst & Gemüse
-          <i className="material-icons">expand_less</i>
-        </dt>
-
+        {gruppenHeader}
         {artikelArray}
-
       </React.Fragment>
     )
   }
