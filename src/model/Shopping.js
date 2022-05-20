@@ -13,7 +13,7 @@ class Shopping {
    */
   gruppeFinden(suchName, meldungAusgeben) {
     for (let gruppe of this.gruppenListe) {
-      if (gruppe.name == suchName) {
+      if (gruppe.name === suchName) {
         return gruppe
       }
     }

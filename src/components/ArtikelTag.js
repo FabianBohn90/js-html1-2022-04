@@ -6,13 +6,15 @@ class ArtikelTag extends React.Component {
   }
 
   render() {
+    const artikel = this.props.artikel
+
     return (
       <React.Fragment>
         {/* ToDo: füge hier drunter Deinen HTML-Code ein */}
 
 
         <dd>
-          <label><input type="checkbox" />Brokkoli</label>
+          <label><input type="checkbox" />{artikel.name}</label>
         </dd>
 
 

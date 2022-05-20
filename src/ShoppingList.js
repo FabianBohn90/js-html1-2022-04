@@ -1,12 +1,29 @@
 import React from 'react'
 import GruppenTag from './components/GruppenTag'
+import App from "./model/Shopping";
 
 class ShoppingList extends React.Component {
   constructor(props) {
     super(props)
+    this.initialisieren()
   }
 
+initialisieren () {
+    let gewuerze = App.gruppeHinzufuegen("Gewürze")
+    gewuerze.artikelHinzufuegen("Curry")
+
+
+}
   render() {
+
+    let lager = []
+
+    for (const gruppe of App.gruppenListe) {
+      lager.push(<GruppenTag gruppe={gruppe} key={gruppe.id}/>)
+
+    }
+
+
     return (
       //füge hier deinen HTML-Code ein
       <div id="container">
@@ -31,7 +48,7 @@ class ShoppingList extends React.Component {
             </h2>
 
             <dl>
-              <GruppenTag/>
+              {lager}
             </dl>
             <hr />
           </section>

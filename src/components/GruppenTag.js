@@ -7,6 +7,13 @@ class GruppenTag extends React.Component {
   }
 
   render() {
+    const gruppe = this.props.gruppe
+    let artikelArray = []
+    for (const artikel of gruppe.artikelListe ) {
+      artikelArray.push(<ArtikelTag artikel = {artikel} key={artikel.id}/>)
+    }
+
+
     return (
       <React.Fragment>
         {/* ToDo: füge hier drunter Deinen HTML-Code ein */}
@@ -15,9 +22,8 @@ class GruppenTag extends React.Component {
           <i className="material-icons">expand_less</i>
         </dt>
 
-        <ArtikelTag/>
-        <ArtikelTag/>
-        <ArtikelTag/>
+        {artikelArray}
+
       </React.Fragment>
     )
   }
