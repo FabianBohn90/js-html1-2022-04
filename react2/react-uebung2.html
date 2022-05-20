@@ -81,8 +81,22 @@
 <script type="text/babel">
 
   //ToDo: Schreibe hier deine Funktion "Wiederholt"!
+  function Wiederholt(props) {
+    return (
 
-  const element4 = <Wiederholt />;
+      <div>
+        Hey,  {props.name}
+      </div>
+
+    )
+  }
+
+  const element4 = [
+    <Wiederholt name={"Hans"}/>,
+    <Wiederholt name={"Fridolin"}/>,
+    <Wiederholt name={"Olaf"}/>
+  ]
+
   ReactDOM.render(
     element4,
     document.getElementById('root4')
