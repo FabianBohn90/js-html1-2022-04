@@ -24,7 +24,7 @@
 
   }
 
-  const element = <Hallo />;
+  const element = <Hallo/>;
   ReactDOM.render(
     element,
     document.getElementById('root')
@@ -38,16 +38,15 @@
 
   //ToDo: Schreibe hier deine Klasse Tag!
   class Tag extends React.Component {
-  render() {
-    return (
-      <h1>Heute ist ein schöner Tag!</h1>
-    )
+    render() {
+      return (
+        <h1>Heute ist ein schöner Tag!</h1>
+      )
+    }
   }
 
-}
 
-
-  const element2 = <Tag />;
+  const element2 = <Tag/>;
   ReactDOM.render(
     element2,
     document.getElementById('root2')
@@ -62,13 +61,13 @@
   //ToDo: Schreibe hier deine Funktion mit props! Vergesse nicht, deinen Namen unten zu schreiben!
 
   function Hey(props) {
-  return (
-    <div>
-    hey,  {props.name}
-  </div> )
-}
+    return (
+      <div>
+        hey, {props.name}
+      </div>)
+  }
 
-  const element3 = <Hey name="Fabian" />;
+  const element3 = <Hey name="Fabian"/>;
   ReactDOM.render(
     element3,
     document.getElementById(`root3`)
@@ -85,7 +84,7 @@
     return (
 
       <div>
-        Hey,  {props.name}
+        Hey, {props.name}
       </div>
 
     )
@@ -109,16 +108,16 @@
 <script type="text/babel">
 
   //ToDo: Schreibe hier deine Klasse mit props! Vergesse nicht, deinen Namen unten zu schreiben!
-class Vorname extends React.Component {
-  render() {
-    return (
-      <div>Du wirst langsam echt gut in React {this.props.name}</div>
-    )
+  class Vorname extends React.Component {
+    render() {
+      return (
+        <div>Du wirst langsam echt gut in React {this.props.name}</div>
+      )
+    }
   }
-}
 
 
-  const element5 = <Vorname name="Fabian" />;
+  const element5 = <Vorname name="Fabian"/>;
   ReactDOM.render(
     element5,
     document.getElementById(`root5`)
@@ -130,17 +129,17 @@ class Vorname extends React.Component {
 <script type="text/babel">
   function Item(props) {
     return <div className="item">
-      Name: {props.gegenstand} <br />
+      Name: {props.gegenstand} <br/>
       Preis: {props.preis}
     </div>;
   }
 
   function App() {
     return <div>
-      <Item gegenstand="Brot" preis="1,99" />
-      <Item gegenstand="Käse" preis="2,5" />
-      <Item gegenstand="Wurst" preis="2" />
-      <Item gegenstand="Kuchen" preis="4,99" />
+      <Item gegenstand="Brot" preis="1,99"/>
+      <Item gegenstand="Käse" preis="2,5"/>
+      <Item gegenstand="Wurst" preis="2"/>
+      <Item gegenstand="Kuchen" preis="4,99"/>
     </div>
   }
 
