@@ -10,7 +10,7 @@ class GruppenTag extends React.Component {
     const gruppe = this.props.gruppe
 
     let gruppenHeader = ""
-    if (this.props.gekauft == false) {
+    if (this.props.gekauft === false) {
       gruppenHeader = (<dt>
         <span>{gruppe.name}</span>
         <i className="material-icons">expand_less</i>
@@ -19,7 +19,7 @@ class GruppenTag extends React.Component {
 
     let artikelArray = []
     for (const film of gruppe.artikelListe) {
-      if (film.gekauft == this.props.gekauft) {
+      if (film.gekauft === this.props.gekauft) {
         artikelArray.push(<ArtikelTag artikel={film} key={film.id}/>)
       }
     }
