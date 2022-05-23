@@ -38,11 +38,12 @@ class ShoppingList extends React.Component {
 
   erledigtAufZuKlappen() {
   // ToDo: fertig programmieren
+    this.setState({erledigtAufgeklappt: !this.state.erledigtAufgeklappt})
   }
 
   render() {
     let nochZuKaufen = []
-    if (this.state.einkaufenAufgeklappt == true) {
+    if (this.state.einkaufenAufgeklappt === true) {
       for (const gruppe of App.gruppenListe) {
         nochZuKaufen.push(<GruppenTag
           key={gruppe.id}
@@ -54,6 +55,7 @@ class ShoppingList extends React.Component {
 
     let schonGekauft = []
     // ToDo: Bedingung  mit 'erledigtAufgeklappt' programmieren
+    if (this.state.erledigtAufgeklappt)
     for (const gruppe of App.gruppenListe) {
       schonGekauft.push(<GruppenTag
         key={gruppe.id}
@@ -93,8 +95,8 @@ class ShoppingList extends React.Component {
           <section>
             <h2>Schon gekauft
               {/* ToDo: füge hier drunter Deinen Code ein */}
-              <i className="material-icons">
-                expand_less
+              <i onClick={() => this.erledigtAufZuKlappen()} className="material-icons">
+                {this.state.erledigtAufgeklappt ? 'expand_more' : 'expand_less'}
               </i>
             </h2>
             <dl>
