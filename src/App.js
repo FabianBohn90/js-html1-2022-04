@@ -1,9 +1,9 @@
 import React from 'react'
 import GruppenTag from './components/GruppenTag'
-import App from './model/Shopping'
+import Modell from './model/Shopping'
 
 
-class ShoppingList extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props)
     this.initialisieren()
@@ -17,51 +17,66 @@ class ShoppingList extends React.Component {
   }
 
   initialisieren() {
-    let fantasy = App.gruppeHinzufuegen("Fantasy")
+    let fantasy = Modell.gruppeHinzufuegen("Fantasy")
     let film1 = fantasy.artikelHinzufuegen("Der Dunkle Kristall")
     film1.gekauft = true
     fantasy.artikelHinzufuegen("Die Barbaren")
-    let scifi = App.gruppeHinzufuegen("Science Fiction")
+    let scifi = Modell.gruppeHinzufuegen("Science Fiction")
     let film2 = scifi.artikelHinzufuegen("Alita - Battle Angel")
     film2.gekauft = true
     scifi.artikelHinzufuegen("Mad Max - Fury Road")
-    let dokus = App.gruppeHinzufuegen("Dokumentationen")
+    let dokus = Modell.gruppeHinzufuegen("Dokumentationen")
     let film3 = dokus.artikelHinzufuegen("Endgame - Blaupause für die Globale Versklavung")
     film3.gekauft = true
     dokus.artikelHinzufuegen("Die Kabale")
   }
 
   einkaufenAufZuKlappen() {
-    this.setState({einkaufenAufgeklappt: !this.state.einkaufenAufgeklappt})
+    let neuerZustand = !this.state.einkaufenAufgeklappt
+    this.setState({einkaufenAufgeklappt: neuerZustand})
   }
 
   erledigtAufZuKlappen() {
-    this.setState({erledigtAufgeklappt: !this.state.erledigtAufgeklappt})
+    // ToDo: fertig programmieren
+  }
+
+  // ToDo: diese Methode als 'checkHandler' an GruppenTag und ArtikelTag durchreichen
+  artikelChecken = (artikel) => {
+    // artikel.gekauft 'umpolen'
+    // 'aktion' abhängig von 'artikel.gekauft' auf "erledigt" oder "reaktiviert" setzen
+    // App.informieren mit 'aktion'
+    // 'state' aktualisieren
+  }
+
+  setAktiveGruppe(gruppe) {
+    // ToDo:
   }
 
   render() {
     let nochZuKaufen = []
-    if (this.state.einkaufenAufgeklappt === true) {
-      for (const gruppe of App.gruppenListe) {
+    if (this.state.einkaufenAufgeklappt == true) {
+      for (const gruppe of Modell.gruppenListe) {
         nochZuKaufen.push(<GruppenTag
           key={gruppe.id}
           gruppe={gruppe}
-          gekauft={false}/>)
+          gekauft={false}
+          aktiveGruppeHandler={() => this.setAktiveGruppe(gruppe)}/>)
       }
     }
 
 
     let schonGekauft = []
-    if (this.state.erledigtAufgeklappt)
-      for (const gruppe of App.gruppenListe) {
-        schonGekauft.push(<GruppenTag
-          key={gruppe.id}
-          gruppe={gruppe}
-          gekauft={true}/>)
-      }
+    // ToDo: Bedingung  mit 'erledigtAufgeklappt' programmieren
+    for (const gruppe of Modell.gruppenListe) {
+      schonGekauft.push(<GruppenTag
+        key={gruppe.id}
+        gruppe={gruppe}
+        gekauft={true}/>)
+    }
 
     return (
       <div id="container">
+        {/* ToDo: füge hier drunter Deinen HTML-Code ein */}
         <header>
           <h1>Watchlist</h1>
           <label
@@ -90,8 +105,9 @@ class ShoppingList extends React.Component {
           <hr/>
           <section>
             <h2>Schon gekauft
-              <i onClick={() => this.erledigtAufZuKlappen()} className="material-icons">
-                {this.state.erledigtAufgeklappt ? 'expand_more' : 'expand_less'}
+              {/* ToDo: füge hier drunter Deinen Code ein */}
+              <i className="material-icons">
+                expand_less
               </i>
             </h2>
             <dl>
@@ -120,4 +136,4 @@ class ShoppingList extends React.Component {
   }
 }
 
-export default ShoppingList
+export default App
