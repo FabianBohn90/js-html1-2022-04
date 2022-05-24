@@ -30,7 +30,7 @@ class Gruppe {
    */
   artikelFinden(suchName, meldungAusgeben) {
     for (let artikel of this.artikelListe) {
-      if (artikel.name == suchName) {
+      if (artikel.name === suchName) {
         return artikel
       }
     }
@@ -46,7 +46,7 @@ class Gruppe {
    */
   artikelAuflisten(gekauft) {
     for (let artikel of this.artikelListe) {
-      if (artikel.gekauft == gekauft) {
+      if (artikel.gekauft === gekauft) {
         console.debug("  " + artikel.name)
       }
     }
