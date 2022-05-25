@@ -32,10 +32,8 @@ class App extends React.Component {
   }
 
   einkaufenAufZuKlappen() {
-    let neuerZustand = !this.state.einkaufenAufgeklappt
-    this.setState({einkaufenAufgeklappt: neuerZustand})
+    this.setState({einkaufenAufgeklappt: !this.state.einkaufenAufgeklappt})
   }
-  // ToDo: fertig programmieren
 
   erledigtAufZuKlappen() {
     this.setState({erledigtAufgeklappt: !this.state.erledigtAufgeklappt})
@@ -47,10 +45,26 @@ class App extends React.Component {
     // 'aktion' abhängig von 'artikel.gekauft' auf "erledigt" oder "reaktiviert" setzen
     // App.informieren mit 'aktion'
     // 'state' aktualisieren
+    artikel.gekauft = !artikel.gekauft
+    let aktion
+    if (artikel.gekauft) {
+      aktion = "erledigt"
+    }else {
+      aktion = "unerledigt"
+    }
+    Modell.informieren(`${artikel.name} "ist" ${aktion}`)
+
+    this.setState(this.state)
   }
 
   artikelHinzufuegen() {
     // ToDo: implementiere diese Methode
+    let eingabe = document.getElementById("artikelEingabe")
+    if (eingabe.value.length > 0) {
+      Modell.aktiveGruppe.artikelHinzufuegen(eingabe.value)
+      this.setState(this.state)
+      eingabe.focus()
+    }
   }
 
   setAktiveGruppe(gruppe) {
@@ -61,13 +75,13 @@ class App extends React.Component {
 
   render() {
     let nochZuKaufen = []
-    if (this.state.einkaufenAufgeklappt === true) {
+    if (this.state.einkaufenAufgeklappt) {
       for (const gruppe of Modell.gruppenListe) {
         nochZuKaufen.push(<GruppenTag
           key={gruppe.id}
           gruppe={gruppe}
           gekauft={false}
-          aktiv={gruppe == this.state.aktiveGruppe}
+          aktiv={gruppe === this.state.aktiveGruppe}
           aktiveGruppeHandler={() => this.setAktiveGruppe(gruppe)}
           checkHandler={this.artikelChecken}/>)
       }
@@ -96,7 +110,7 @@ class App extends React.Component {
             <span className="mdc-text-field__ripple"></span>
             <input className="mdc-text-field__input" type="search"
                    id="artikelEingabe" placeholder="Artikel hinzufügen"
-                   onKeyPress={e => (e.key == 'Enter') ? this.artikelHinzufuegen() : ''}/>
+                   onKeyPress={e => (e.key === 'Enter') ? this.artikelHinzufuegen() : ''}/>
             <span className="mdc-line-ripple"></span>
             <i className="material-icons mdc-text-field__icon mdc-text-field__icon--trailing"
                onClick={() => this.artikelHinzufuegen()}>add_circle</i>
