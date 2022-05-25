@@ -35,11 +35,11 @@ class App extends React.Component {
     let neuerZustand = !this.state.einkaufenAufgeklappt
     this.setState({einkaufenAufgeklappt: neuerZustand})
   }
-
+  // ToDo: fertig programmieren
   erledigtAufZuKlappen() {
     let neuerZustand = !this.state.erledigtAufgeklappt
     this.setState({erledigtAufgeklappt: neuerZustand})
-    // ToDo: fertig programmieren
+
   }
 
   // ToDo: diese Methode als 'checkHandler' an GruppenTag und ArtikelTag durchreichen
@@ -58,13 +58,13 @@ class App extends React.Component {
 
   render() {
     let nochZuKaufen = []
-    if (this.state.einkaufenAufgeklappt == true) {
+    if (this.state.einkaufenAufgeklappt === true) {
       for (const gruppe of Modell.gruppenListe) {
         nochZuKaufen.push(<GruppenTag
           key={gruppe.id}
           gruppe={gruppe}
           gekauft={false}
-          aktiv={gruppe == this.state.aktiveGruppe}
+          aktiv={gruppe === this.state.aktiveGruppe}
           aktiveGruppeHandler={() => this.setAktiveGruppe(gruppe)}/>)
       }
     }
@@ -111,8 +111,8 @@ class App extends React.Component {
           <section>
             <h2>Schon gekauft
               {/* ToDo: füge hier drunter Deinen Code ein */}
-              <i className="material-icons">
-                expand_less
+              <i onClick={() => this.erledigtAufZuKlappen()} className="material-icons">
+                {this.state.erledigtAufgeklappt ? 'expand_more' : 'expand_less'}
               </i>
             </h2>
             <dl>
