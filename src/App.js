@@ -37,6 +37,8 @@ class App extends React.Component {
   }
 
   erledigtAufZuKlappen() {
+    let neuerZustand = !this.state.erledigtAufgeklappt
+    this.setState({erledigtAufgeklappt: neuerZustand})
     // ToDo: fertig programmieren
   }
 
