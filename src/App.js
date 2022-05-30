@@ -101,7 +101,7 @@ class App extends React.Component {
             <span className="mdc-text-field__ripple"></span>
             <input className="mdc-text-field__input" type="search"
                    id="artikelEingabe" placeholder="Artikel hinzufügen"
-                   onKeyPress={e => (e.key == 'Enter') ? this.artikelHinzufuegen() : ''}/>
+                   onKeyPress={e => (e.key === 'Enter') ? this.artikelHinzufuegen() : ''}/>
             <span className="mdc-line-ripple"></span>
             <i className="material-icons mdc-text-field__icon mdc-text-field__icon--trailing"
                tabIndex="0" role="button"
