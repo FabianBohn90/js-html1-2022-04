@@ -67,13 +67,13 @@ class App extends React.Component {
 
   render() {
     let nochZuKaufen = []
-    if (this.state.einkaufenAufgeklappt == true) {
+    if (this.state.einkaufenAufgeklappt === true) {
       for (const gruppe of Modell.gruppenListe) {
         nochZuKaufen.push(<GruppenTag
           key={gruppe.id}
           gruppe={gruppe}
           gekauft={false}
-          aktiv={gruppe == this.state.aktiveGruppe}
+          aktiv={gruppe === this.state.aktiveGruppe}
           aktiveGruppeHandler={() => this.setAktiveGruppe(gruppe)}
           checkHandler={this.artikelChecken}/>)
       }
