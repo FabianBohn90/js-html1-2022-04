@@ -10,13 +10,18 @@ class PartyInput extends React.Component{
         }
     }
 
-    onButtonClick(){
+    onButtonClick() {
         console.log("Button wurde gedrückt")
         /* Aufgabe 4
          * ToDo: Führe die Funktion handleInput() aus, welche über die Props in diese Klasse übergeben wurde.
          *  Benutze als Argument das input-Attribut des States (wie in Zeile 8 gespeichert).
          */
+
+        this.props.handleInput(this.state.input)
+
     }
+
+
 
     onChange(event){
         this.setState({input: event.target.value})
@@ -31,7 +36,7 @@ class PartyInput extends React.Component{
             <div>
                 <input placeholder={this.props.headline} onChange={
                     (event) => this.onChange(event)}/>
-                <button>Change Party Name</button>
+                <button onClick={this.onButtonClick}>Change Party Name</button>
             </div>
         )
     }

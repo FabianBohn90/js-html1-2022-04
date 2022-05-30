@@ -10,10 +10,13 @@ class PartyButton extends React.Component{
         return (
             /*  Aufgabe 2
              * ToDo: Schreibe ein onClick Event für diesen Button, sodass die Funktion startParty() ausgeführt wird.
+             *
              */
-            <div>
-                 <button>START PARTY</button>
-            </div>
+                <div>
+                <button onClick={this.startParty}>
+                 START PARTY
+                </button>
+                </div>
         )
     }
 
