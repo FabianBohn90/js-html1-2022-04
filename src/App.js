@@ -32,7 +32,8 @@ class App extends React.Component {
   }
 
   einkaufenAufZuKlappen() {
-    this.setState({einkaufenAufgeklappt: !this.state.einkaufenAufgeklappt})
+    let neuerZustand = !this.state.einkaufenAufgeklappt
+    this.setState({einkaufenAufgeklappt: neuerZustand})
   }
 
   erledigtAufZuKlappen() {
@@ -40,31 +41,22 @@ class App extends React.Component {
   }
 
   artikelChecken = (artikel) => {
-    // ToDo: implementiere diese Methode
-    // artikel.gekauft 'umpolen'
-    // 'aktion' abhängig von 'artikel.gekauft' auf "erledigt" oder "reaktiviert" setzen
-    // App.informieren mit 'aktion'
-    // 'state' aktualisieren
     artikel.gekauft = !artikel.gekauft
-    let aktion
-    if (artikel.gekauft) {
-      aktion = "erledigt"
-    }else {
-      aktion = "unerledigt"
-    }
-    Modell.informieren(`${artikel.name} "ist" ${aktion}`)
-
+    const aktion = (artikel.gekauft) ? "erledigt" : "reaktiviert"
+    Modell.informieren("[App] Artikel \"" + artikel.name + "\" wurde " + aktion)
     this.setState(this.state)
   }
 
   artikelHinzufuegen() {
     // ToDo: implementiere diese Methode
-    let eingabe = document.getElementById("artikelEingabe")
-    if (eingabe.value.length > 0) {
-      Modell.aktiveGruppe.artikelHinzufuegen(eingabe.value)
+    const eingabe = document.getElementById("artikelEingabe")
+    const artikelName = eingabe.value.trim()
+    if (artikelName.length > 0) {
+      Modell.aktiveGruppe.artikelHinzufuegen(artikelName)
       this.setState(this.state)
-      eingabe.focus()
     }
+    eingabe.value = ""
+    eingabe.focus()
   }
 
   setAktiveGruppe(gruppe) {
@@ -75,13 +67,13 @@ class App extends React.Component {
 
   render() {
     let nochZuKaufen = []
-    if (this.state.einkaufenAufgeklappt) {
+    if (this.state.einkaufenAufgeklappt == true) {
       for (const gruppe of Modell.gruppenListe) {
         nochZuKaufen.push(<GruppenTag
           key={gruppe.id}
           gruppe={gruppe}
           gekauft={false}
-          aktiv={gruppe === this.state.aktiveGruppe}
+          aktiv={gruppe == this.state.aktiveGruppe}
           aktiveGruppeHandler={() => this.setAktiveGruppe(gruppe)}
           checkHandler={this.artikelChecken}/>)
       }
@@ -102,7 +94,6 @@ class App extends React.Component {
 
     return (
       <div id="container">
-        {/* ToDo: füge hier drunter Deinen HTML-Code ein */}
         <header>
           <h1>Watchlist</h1>
           <label
@@ -110,9 +101,10 @@ class App extends React.Component {
             <span className="mdc-text-field__ripple"></span>
             <input className="mdc-text-field__input" type="search"
                    id="artikelEingabe" placeholder="Artikel hinzufügen"
-                   onKeyPress={e => (e.key === 'Enter') ? this.artikelHinzufuegen() : ''}/>
+                   onKeyPress={e => (e.key == 'Enter') ? this.artikelHinzufuegen() : ''}/>
             <span className="mdc-line-ripple"></span>
             <i className="material-icons mdc-text-field__icon mdc-text-field__icon--trailing"
+               tabIndex="0" role="button"
                onClick={() => this.artikelHinzufuegen()}>add_circle</i>
           </label>
 

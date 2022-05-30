@@ -1,6 +1,5 @@
 import React from 'react'
 import ArtikelTag from './ArtikelTag'
-import artikel from "../model/Artikel";
 
 class GruppenTag extends React.Component {
   constructor(props) {
@@ -8,9 +7,9 @@ class GruppenTag extends React.Component {
   }
 
   artikelEntfernen(name) {
-    // ToDo: implementiere diese Methode
     this.props.gruppe.artikelEntfernen(name)
-    this.props.aktiveGruppeHandler(this.props.gruppe)
+    // this.props.aktiveGruppeHandler(this.props.gruppe)
+    this.forceUpdate()
   }
 
   render() {
