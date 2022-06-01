@@ -23,7 +23,7 @@ class GruppenTag extends React.Component {
     const gruppe = this.props.gruppe
 
     let gruppenHeader = ""
-    if (this.props.gekauft == false) {
+    if (this.props.gekauft === false) {
       gruppenHeader = (
         <dt className={this.props.aktiv ? "aktiv" : "inaktiv"}
             onClick={() => this.props.aktiveGruppeHandler(gruppe)}>

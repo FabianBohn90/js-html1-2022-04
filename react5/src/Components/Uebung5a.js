@@ -69,7 +69,11 @@ function Gruesse2(props) {
 
   const isLoggedIn = props.isLoggedIn;
   //ToDo: Schreibe hier deinen Code!
-
+if (isLoggedIn) {
+  return (NutzerGruss2())
+} else {
+  return (GastGruss2())
+}
 }
 
 
@@ -103,11 +107,12 @@ export function Mailbox(props) {
       <div>
 
         <h1>Willkommen zu deiner Mailbox!</h1>
-        {//ToDo: Hier die Bedingung und den Operator einfügen
+        {ungeleseneNachrichten && (
             <h2>
-              Du hast {ungeleseneNachrichten.length} ungelesene Nachrichten.
-            </h2>
-        }
+            Du hast {ungeleseneNachrichten.length} ungelesene Nachrichten.
+          </h2>
+          )
+          }
       </div>
   );
 }
@@ -131,7 +136,14 @@ export class NutzerGruessung extends React.Component {
   //ToDo: Schreibe hier deinen Code statt des Rückgabewerts null!
     render(){
       return null
-    }
+
+
+      }
+
+
+
+
+
 }
 
 
