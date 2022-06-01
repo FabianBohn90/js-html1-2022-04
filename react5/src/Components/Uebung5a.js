@@ -107,7 +107,7 @@ export function Mailbox(props) {
       <div>
 
         <h1>Willkommen zu deiner Mailbox!</h1>
-        {ungeleseneNachrichten.length > 0 &&
+        {ungeleseneNachrichten.length > 0  &&
             <h2>
             Du hast {ungeleseneNachrichten.length} ungelesene Nachrichten.
           </h2>
